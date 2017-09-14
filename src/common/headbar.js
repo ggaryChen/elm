@@ -9,14 +9,23 @@ class Headbar extends Component{
             search:this.props.search
         }
     }
+    onLeftClickHandler = (e)=>{
+        e.preventDefault();
+        this.props.history.goBack()
+    }
+    onRightClick = (e)=>{
+        e.preventDefault();
+        this.props.history.push('/index')
+    }
     render(){
         return (
             <div className='headbar'>
                 <div style={{position:'fixed',top:'0',zIndex:'999',overflow:'hidden',width:'100%'}}>
                     <NavBar
+                        onLeftClick={this.onLeftClickHandler.bind(this) }
                         mode='dark'
                         rightContent={[
-                            <Icon key="1" type="ellipsis" />,
+                            <Icon key="1" onClick={this.onRightClick.bind(this)} type="ellipsis" />,
                         ]}
                     >
                         {this.state.title}

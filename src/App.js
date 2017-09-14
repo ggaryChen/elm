@@ -11,6 +11,8 @@ import Index from './component/Index';
 import Find from './component/Find';
 import Order from './component/Order';
 import User from './component/User';
+import Shop from './component/Shop';
+import Set from './component/Set';
 // 样式
 import './App.css';
 // 历史记录
@@ -59,6 +61,12 @@ class App extends Component {
 							<Route exact history={history}
                                    path="/user"
                                    component={User}/>
+                            <Route history={history}
+                                   path="/shop"
+                                   component={Shop}/>
+                            <Route history={history}
+                                   path="/set"
+                                   component={Set}/>
 						</Switch>
                 	</ReactCSSTransitionGroup>
                 </ScrollToTop>

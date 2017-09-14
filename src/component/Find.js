@@ -6,7 +6,7 @@ class Find extends Component{
     render(){
         return (
             <div>
-                <Headbar title='探索'/>
+                <Headbar title='探索' search='true' history={this.props.history}/>
                 <Card full>
                     <Card.Header
                         title="This is title"

@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import {List} from 'antd-mobile';
+import {List,Icon} from 'antd-mobile';
 const Item = List.Item;
 const Brief = Item.Brief;
 class Commonlist extends Component{
@@ -14,10 +14,11 @@ class Commonlist extends Component{
         return (
             <div>
                 <List>
-                    {data.map((item,index) => {return (<Item arrow='horizontal' 
+                    {data.map((item,index) => {return (<Item arrow={!item.good&&'horizontal'}
                                                             multipleLine={!(!item.text)} 
                                                             thumb={item.logo} key={index}
-                                                            extra={item.rtext}
+                                                            extra={(!!item.good)?<div><Icon type="left" size="md" color="red" /><Icon type="right" size="md" color="red" /></div>:item.rtext}
+                                                            onClick={(!!item.class)?() => {this.props.history.push('/'+item.class+'/'+item.title)}:''}
                                                         >
                                                             {item.title}
                                                             <Brief>{item.text}</Brief>

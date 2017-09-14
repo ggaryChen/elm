@@ -8,7 +8,7 @@ class Order extends Component{
     render(){
         return (
             <div>
-                <Headbar title='订单'/>
+                <Headbar title='订单' history={this.props.history}/>
                 <Tabs defaultActiveKey="2" swipeable>
                     <TabPane tab={<Badge text={'3'}>First Tab</Badge>} key="1">
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '9rem', backgroundColor: '#fff' }}>
